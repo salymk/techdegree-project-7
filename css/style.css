@@ -1,0 +1,146 @@
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+  margin: 0;
+  grid-template-areas: "header" "navigation" "main";
+  background-color: #fff;
+  /* Mobile - Make the chart widgets responsive to screen resizing */ }
+  .grid-container .widget-container-full, .grid-container .widget-container-half {
+    width: 95vw; }
+  .grid-container .header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: header;
+    background-color: #737ABF;
+    height: 75px;
+    font-family: 'Lato', sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap; }
+    .grid-container .header #title {
+      color: #fff;
+      font-size: 1.3em;
+      padding: .5em;
+      font-weight: lighter; }
+      .grid-container .header #title #app-word {
+        font-weight: bold;
+        font-size: 1.4em; }
+    .grid-container .header .bell {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap; }
+      .grid-container .header .bell h3 {
+        margin: 1em;
+        font-size: .75em;
+        color: #fff; }
+      .grid-container .header .bell .profile-picture {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px; }
+      .grid-container .header .bell .vl {
+        border-left: 2px solid #2C8EC5;
+        height: 30px;
+        padding: .2em; }
+  .grid-container .navigation {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: navigation;
+    background-color: #4C4C73;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 60px; }
+    .grid-container .navigation img {
+      padding: .3em; }
+
+.main {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  display: -ms-grid;
+  display: grid;
+  grid-area: main;
+  grid-gap: 10px; }
+  .main .main-header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr;
+    -ms-grid-rows: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "headline search"; }
+    .main .main-header .headline {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      grid-area: headline; }
+      .main .main-header .headline h2 {
+        font-size: 1em;
+        margin-left: 5px; }
+    .main .main-header .main-header-search {
+      -ms-grid-row: 1;
+      -ms-grid-column: 2;
+      grid-area: search;
+      background-color: #F5F5F5;
+      text-align: right;
+      -ms-grid-row-align: center;
+      align-self: center;
+      padding: 15px;
+      border-bottom-left-radius: 15px; }
+  .main .alert {
+    background-color: #7476B5;
+    padding: 20px;
+    color: #fff; }
+    .main .alert .alert-banner-close {
+      margin-left: 15px;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+  .main .button-primary {
+    background-color: #7275BC; }
+  .main .button-disabled {
+    background-color: #B3B3B3; }
+  .main .members img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px; }
+  .main .recent-activity img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px; }
