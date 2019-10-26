@@ -12,8 +12,8 @@ $white: #fff;
 //Circular images
 @mixin circleImg {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
  //Flexable header
@@ -25,149 +25,259 @@ $white: #fff;
   flex-wrap: nowrap;
 }
 
-//Grid container
-@mixin gridContainer {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: auto;
-  margin: 0;
-  grid-template-areas:
-    "header"
-    "navigation"
-    "main";
-}
-
-//Grid Container
+// Grid Layout Container
 .grid-container {
-  @include gridContainer;
-  background-color: $white;
-
-  /* Mobile - Make the chart widgets responsive to screen resizing */
-  .widget-container-full, .widget-container-half {
-    width: 95vw;
-  }
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "nav main";
 
   .header {
     grid-area: header;
-    background-color: $headerColor;
-    height: 75px;
-    font-family: 'Lato', sans-serif;
-    @include flexHeader;
+  }
+  .navigation {
+    grid-area: nav;
+  }
+  .main {
+    grid-area: main;
+    //Main dashboard layout
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-areas:
+      "main-header main-header"
+      "alert alert"
+      "traffic traffic"
+      "daily mobile"
+      "social social"
+      "members recent-activity"
+      "message settings";
 
-    #title {
-      color: $white;
-      font-size: 1.3em;
-      padding: .5em;
-      font-weight: lighter;
-      #app-word {
-        font-weight: bold;
-        font-size: 1.4em;
-      }
+    .main-header {
+      grid-area: main-header;
+
     }
 
-    .bell {
-      @include flexHeader;
-      h3 {
-        margin: 1em;
-        font-size: .75em;
-        color: $white;
-      }
-      .profile-picture {
-        @include circleImg;
-      }
-      .vl {
-        border-left: 2px solid #2C8EC5;
-        height: 30px;
-        padding: .2em;
-      }
-    }//bell ends
-  }//header ends
+    .alert {
+      background-color: #bf00ff;
+      grid-area: alert;
+    }
 
-  .navigation {
-    grid-area: navigation;
-    background-color: $navigationColor;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
+    .traffic {
+      grid-area: traffic;
+    }
 
-    img {
-      padding: .3em;
+    .daily {
+      grid-area: daily;
+    }
+
+    .mobile {
+      background-color: $alertColor;
+      grid-area: mobile;
+    }
+
+    .social {
+      background-color: red;
+      grid-area: social;
+    }
+
+    .members {
+      background-color: purple;
+      grid-area: members;
+    }
+
+    .recent-activity {
+      background-color: coral;
+      grid-area: recent-activity;
+    }
+
+    .message {
+      background-color: grey;
+      grid-area: message;
+    }
+
+    .settings {
+      background-color: brown;
+      grid-area: settings;
+    }
+
+    /* Make the chart widgets responsive to screen resizing */
+    .widget-container-full {
+      width: 90vw;
+    }
+    .widget-container-half {
+      width: 45vw;
     }
   }
 }
 
-//Main Content
+
+// Main styles
+.header {
+  background-color: $headerColor;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: auto;
+  color: $white;
+  box-shadow: 5px 5px 5px #aaaaaa;
+
+  #title {
+     color: $white;
+     font-size: 1.2em;
+     padding: .5em;
+     font-weight: bold;
+     #app-word {
+       font-weight: 100;
+       font-size: 1.3em;
+     }
+   }
+
+  .bell {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .vl {
+      border-left: 2px solid #2C8EC5;
+      height: 30px;
+      padding: .2em;
+    }
+
+    .bell-icon {
+      margin: 5px;
+    }
+  }
+  .profile-picture {
+    @include circleImg;
+  }
+
+  #profile-name {
+    font-weight: 400;
+    font-size: .8em;
+    margin-right: 7px;
+    margin-left: 10px;
+
+  }
+
+}
+
+.navigation {
+  background-color: $navigationColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    margin: 10px;
+  }
+}
+
 .main {
+
+}
+
+.main-header {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  // align-items: center;
+  background-color: #F5F5F5;
+  border-collapse: separate;
+
   display: grid;
-  grid-area: main;
+  grid-template-columns: 1fr 3fr;
   grid-gap: 10px;
 
-  .main-header {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-
-    grid-template-areas: "headline search";
-
-
-    .headline {
-      // background-color: $white;
-      grid-area: headline;
-      h2 {
-        font-size: 1em;
-        margin-left: 5px;
-      }
-    }
-
-    .main-header-search {
-      grid-area: search;
-      background-color: #F5F5F5;
-      text-align: right;
-      align-self: center;
-      padding: 15px;
-
-      border-bottom-left-radius: 15px;
-
-      input {
-        // border-radius: 5px;
-        // border: none;
-        // height: 30px;
-      }
-    }
+  .main-header-search input {
+    border-radius: 4px;
+    border: 1px solid lightgrey;
+    height: 30px;
+    margin-right: 10px;
   }
 
+  .main-header-search {
+    justify-self: flex-end;
+    align-self: center;
+    border-radius: 50%;
 
-  .alert {
-    background-color: $alertColor;
-    padding: 20px;
-    color: $white;
-
-    .alert-banner-close {
-      margin-left: 15px;
-      font-weight: bold;
-      font-size: 22px;
-      line-height: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .alert-banner-close:hover {}
+    // border-radius: 15px;
+    // overflow: hidden;
+    // perspective: 1px;
   }
 
-  .button-primary {
-    background-color: $buttonPrimary;
+  .headline {
+    background-color: $white;
+    font-size: 1em;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+
   }
 
-  .button-disabled {
-    background-color: $buttonDisabled;
-  }
-
-  .members img{
-    @include circleImg;
-  }
-
-  .recent-activity img {
-    @include circleImg;
-  }
 }
+
+.alert {
+
+}
+
+.alert-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.traffic {
+}
+
+.daily {
+}
+
+.mobile {
+
+}
+
+.social {
+
+}
+
+.members {
+
+}
+
+.recent-activity {
+
+}
+
+.message {
+
+}
+
+.settings {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile - Make the chart widgets responsive to screen resizing */
+// .widget-container-full, .widget-container-half {
+//   width: 95vw;
+// }
