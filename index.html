@@ -17,10 +17,13 @@
            <h1 id="title">Your<span id="app-word">App</span></h1>
 
            <div class="bell">
-             <img src="icons\icon-bell.svg" alt="bell icon">
+
+             <img class="bell-icon" src="icons\icon-bell.svg" alt="bell icon">
              <div class="vl"></div>
+
              <img class="profile-picture" src="images\salym.jpg" alt="profile picture">
-             <h3 id="profile-name">Salym<br>Akhmedov</h3>
+             <h3 id="profile-name">Salym Akhmedov</h3>
+
              <div class="notifications">
 
              </div>
@@ -41,20 +44,24 @@
 
            <!-- Dashboard header -->
            <div class="main-header">
-
              <div class="headline">
                <h2>Dashboard</h2>
              </div>
-
-             <div class="main-header-search">
-               <input type="search" placeholder="Search...">
-             </div>
+             <div class="search"><input type="search" placeholder="Search..."></div>
+             <!-- <div class="main-header-search">
+             </div> -->
            </div>
 
            <!-- Alert banner -->
            <div class="alert" id="alert">
-             <!-- JS will insert alert here -->
+             <div class="alert-banner">
+               <p><strong>Alert:</strong> You have <strong>6</strong> overdue
+                         tasks to complete ullam id dolor id nibh ultricies vehicula ut elit. Curabitur
+                         blandit tepus porttitor.</p>
+               <p class="alert-banner-close">X</p>
+             </div>
            </div>
+
 
            <!-- Traffic Section: line graphs -->
            <section class="traffic">

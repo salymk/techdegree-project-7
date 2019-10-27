@@ -3,14 +3,14 @@
 const alert = document.getElementById('alert');
 
 //Create the html for the banner
-alert.innerHTML =
-`
-     <div class="alert-banner">
-          <p><strong>Alert:</strong> You have <strong>6</strong> overdue
-          tasks to complete</p>
-          <p class="alert-banner-close">x</p>
-      </div>
-  ` ;
+// alert.innerHTML =
+// `
+//      <div class="alert-banner">
+//           <p><strong>Alert:</strong> You have <strong>6</strong> overdue
+//           tasks to complete</p>
+//           <p class="alert-banner-close">x</p>
+//       </div>
+//   ` ;
 
 //If the user clicks the close button, then
 //hide the alert banner

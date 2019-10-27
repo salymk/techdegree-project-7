@@ -25,6 +25,10 @@ $white: #fff;
   flex-wrap: nowrap;
 }
 
+* {
+  font-family: 'Lato', sans-serif;
+}
+
 // Grid Layout Container
 .grid-container {
   display: grid;
@@ -61,7 +65,6 @@ $white: #fff;
     }
 
     .alert {
-      background-color: #bf00ff;
       grid-area: alert;
     }
 
@@ -117,7 +120,7 @@ $white: #fff;
 // Main styles
 .header {
   background-color: $headerColor;
-  font-family: 'Lato', sans-serif;
+  // font-family: 'Lato', sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -149,6 +152,11 @@ $white: #fff;
 
     .bell-icon {
       margin: 5px;
+      transition: color 1s;
+    }
+
+    .bell-icon:hover {
+      color: red;
     }
   }
   .profile-picture {
@@ -163,6 +171,10 @@ $white: #fff;
 
   }
 
+}
+
+.st0 {
+  fill: red;
 }
 
 .navigation {
@@ -181,52 +193,54 @@ $white: #fff;
 }
 
 .main-header {
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-between;
-  // align-items: center;
-  background-color: #F5F5F5;
-  border-collapse: separate;
-
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 10px;
-
-  .main-header-search input {
-    border-radius: 4px;
-    border: 1px solid lightgrey;
-    height: 30px;
-    margin-right: 10px;
-  }
-
-  .main-header-search {
-    justify-self: flex-end;
-    align-self: center;
-    border-radius: 50%;
-
-    // border-radius: 15px;
-    // overflow: hidden;
-    // perspective: 1px;
-  }
-
-  .headline {
-    background-color: $white;
-    font-size: 1em;
-    font-family: 'Lato', sans-serif;
-    text-align: center;
-
-  }
-
-}
-
-.alert {
-
-}
-
-.alert-banner {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+
+  background-color: #F5F5F5;
+
+  .headline {
+    background-color: white;
+    font-size: smaller;
+    padding: 5px;
+  }
+
+  .search {
+    margin: 15px;
+  }
+}
+
+.search input {
+    width: 275px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid grey;
+  }
+
+
+.alert {
+  // border-top: solid 1px gray;
+  padding-top: .75em;
+  padding-bottom: .75em;
+}
+.alert-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: $alertColor;
+  color: $white;
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+  padding: 0 .75em;
+}
+.alert-banner-close {
+  border: none;
+  color: $white;
+  margin-left: auto;
+  font-size: 1.1em;
 }
 
 .traffic {
@@ -259,11 +273,9 @@ $white: #fff;
 
 }
 
-
-
-
-
-
+#Layer_1 {
+  fill: red;
+}
 
 
 

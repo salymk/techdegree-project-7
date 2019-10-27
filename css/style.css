@@ -1,3 +1,6 @@
+* {
+  font-family: 'Lato', sans-serif; }
+
 .grid-container {
   display: -ms-grid;
   display: grid;
@@ -36,7 +39,6 @@
       -ms-grid-row: 3;
       -ms-grid-column: 1;
       -ms-grid-column-span: 3;
-      background-color: #bf00ff;
       grid-area: alert; }
     .grid-container .main .traffic {
       -ms-grid-row: 5;
@@ -50,7 +52,7 @@
     .grid-container .main .mobile {
       -ms-grid-row: 7;
       -ms-grid-column: 3;
-      background-color: #DCEDC8;
+      background-color: #7476B5;
       grid-area: mobile; }
     .grid-container .main .social {
       -ms-grid-row: 9;
@@ -85,7 +87,6 @@
 
 .header {
   background-color: #737ABF;
-  font-family: 'Lato', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,7 +128,12 @@
       height: 30px;
       padding: .2em; }
     .header .bell .bell-icon {
-      margin: 5px; }
+      margin: 5px;
+      -webkit-transition: color 1s;
+      -o-transition: color 1s;
+      transition: color 1s; }
+    .header .bell .bell-icon:hover {
+      color: red; }
   .header .profile-picture {
     border-radius: 50%;
     width: 30px;
@@ -137,6 +143,9 @@
     font-size: .8em;
     margin-right: 7px;
     margin-left: 10px; }
+
+.st0 {
+  fill: red; }
 
 .navigation {
   background-color: #4C4C73;
@@ -154,28 +163,62 @@
     margin: 10px; }
 
 .main-header {
-  background-color: #F5F5F5;
-  border-collapse: separate;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 3fr;
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 10px; }
-  .main-header .main-header-search input {
-    border-radius: 4px;
-    border: 1px solid lightgrey;
-    height: 30px;
-    margin-right: 10px; }
-  .main-header .main-header-search {
-    justify-self: flex-end;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center;
-    border-radius: 50%; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F5F5F5; }
   .main-header .headline {
-    background-color: #fff;
-    font-size: 1em;
-    font-family: 'Lato', sans-serif;
-    text-align: center; }
+    background-color: white;
+    font-size: smaller;
+    padding: 5px; }
+  .main-header .search {
+    margin: 15px; }
+
+.search input {
+  width: 275px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid grey; }
+
+.alert {
+  padding-top: .75em;
+  padding-bottom: .75em; }
+
+.alert-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #7476B5;
+  color: #fff;
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+  padding: 0 .75em; }
+
+.alert-banner-close {
+  border: none;
+  color: #fff;
+  margin-left: auto;
+  font-size: 1.1em; }
+
+#Layer_1 {
+  fill: red; }
 
 /* Mobile - Make the chart widgets responsive to screen resizing */
