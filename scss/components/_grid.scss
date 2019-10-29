@@ -1,0 +1,173 @@
+/* ============================================= */
+/*              Grid System                      */
+/* ============================================= */
+
+.grid-container {
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 1fr;
+  // grid-template-areas:
+  //   "header",
+  //   "navigation",
+  //   "main";
+
+  display: flex;
+  flex-direction: column;
+}
+
+// .header {
+//   grid-area: header;
+// }
+// .navigation {
+//   grid-area: navigation;
+// }
+// .main {
+//   grid-area: main;
+// }
+
+
+/* Make the chart widgets responsive to screen resizing on mobile*/
+.widget-container-full,
+.widget-container-half {
+  width: 95vw;
+}
+
+
+
+//Main content desktop layout
+.main {
+  display: grid;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 75px 1fr;
+    grid-template-areas:
+      "header header"
+      "navigation main";
+  }
+
+  .main {
+    grid-template-columns: 50%;
+  }
+  .traffic, .social {
+    grid-column: 1 / span 2;
+  }
+
+  .daily, .members, .message {
+    grid-column: 1 / span 1;
+  }
+
+  .mobile, .activity, .settings {
+    grid-column: 2 / span 1;
+  }
+
+  /* Make the chart widgets responsive to
+  screen resizing on tablet and desktop*/
+  .widget-container-full {
+    width: 90vw;
+  }
+
+  .widget-container-half {
+    width: 45vw;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .grid-container {
+//   display: grid;
+//   grid-template-columns: 75px 1fr;
+//   grid-template-areas:
+//     "header header"
+//     "nav main"
+//     "nav main";
+//
+//   .header {
+//     grid-area: header;
+//   }
+//   .navigation {
+//     grid-area: nav;
+//   }
+//   .main {
+//     grid-area: main;
+//     //Main dashboard layout
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-areas:
+//       "main-header main-header"
+//       "alert alert"
+//       "traffic traffic"
+//       "daily mobile"
+//       "social social"
+//       "members recent-activity"
+//       "message settings";
+//
+//     .main-header {
+//       grid-area: main-header;
+//
+//     }
+//
+//     .alert {
+//       grid-area: alert;
+//     }
+//
+//     .traffic {
+//       grid-area: traffic;
+//     }
+//
+//     .daily {
+//       grid-area: daily;
+//     }
+//
+//     .mobile {
+//       grid-area: mobile;
+//     }
+//
+//     .social {
+//       grid-area: social;
+//     }
+//
+//     .members {
+//       background-color: purple;
+//       grid-area: members;
+//     }
+//
+//     .recent-activity {
+//       background-color: coral;
+//       grid-area: recent-activity;
+//     }
+//
+//     .message {
+//       background-color: grey;
+//       grid-area: message;
+//     }
+//
+//     .settings {
+//       background-color: brown;
+//       grid-area: settings;
+//     }
+//
+//     /* Make the chart widgets responsive to screen resizing */
+//     .widget-container-full {
+//       width: 90vw;
+//     }
+//
+//     .widget-container-half {
+//       width: 45vw;
+//     }
+//
+//   } //Main
+// }//grid-container

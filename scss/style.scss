@@ -1,0 +1,218 @@
+@import 'utilities/_variables.scss',
+        'utilities/_mixins.scss',
+        'utilities/_images.scss',
+        'utilities/_media-quries.scss';
+
+@import 'base/_base.scss';
+
+@import 'components/_grid.scss',
+        'components/_header.scss',
+        'components/_main.scss',
+        'components/_navigation.scss',
+        'components/_buttons.scss',
+        'components/_form.scss';
+
+//
+// // Grid Layout Container
+//
+//
+// // Main styles
+// .header {
+//   background-color: $headerColor;
+//   // font-family: 'Lato', sans-serif;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   height: auto;
+//   color: $white;
+//   box-shadow: 5px 5px 5px #aaaaaa;
+//
+//   #title {
+//      color: $white;
+//      font-size: 1.2em;
+//      padding: .5em;
+//      font-weight: bold;
+//      #app-word {
+//        font-weight: 100;
+//        font-size: 1.3em;
+//      }
+//    }
+//
+//   .bell {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+//     .vl {
+//       border-left: 2px solid #2C8EC5;
+//       height: 30px;
+//       padding: .2em;
+//     }
+//
+//     .bell-icon {
+//       margin: 5px;
+//     }
+//   }
+//   .profile-picture {
+//     @include circleImg;
+//   }
+//
+//   #profile-name {
+//     font-weight: 400;
+//     font-size: .8em;
+//     margin-right: 7px;
+//     margin-left: 10px;
+//
+//   }
+//
+// }
+//
+// .navigation {
+//   background-color: $navigationColor;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//
+//   a {
+//     margin: 10px;
+//   }
+// }
+//
+// .main {
+//
+// }
+//
+// .main-header {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-items: center;
+//
+//   background-color: #F5F5F5;
+//
+//   .headline {
+//     background-color: white;
+//     font-size: smaller;
+//     padding: 5px;
+//   }
+//
+//   .search {
+//     margin: 15px;
+//   }
+//
+//   .traffic, .daily, .mobile, .social,
+//   .members, .recent-activity, .message, .settings {
+//     padding: 10px;
+//     border-bottom: 1px solid grey;
+//   }
+// }
+//
+// .search input {
+//     width: 275px;
+//     height: 35px;
+//     border-radius: 5px;
+//     border: 1px solid grey;
+//   }
+//
+//
+// .alert {
+//   // border-top: solid 1px gray;
+//   padding-top: .75em;
+//   padding-bottom: .75em;
+// }
+// .alert-banner {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//
+//   background-color: $alertColor;
+//   color: $white;
+//   width: 90%;
+//   margin: auto;
+//   border-radius: 10px;
+//   padding: 0 .75em;
+// }
+// .alert-banner-close {
+//   border: none;
+//   color: $white;
+//   margin-left: auto;
+//   font-size: 1.1em;
+// }
+//
+// .traffic {
+//   margin: 10px;
+//   h3 {
+//     margin-left: 20px;
+//   }
+// }
+//
+// .daily, .mobile {
+//   margin: 10px;
+//   border: 1px solid grey;
+//   h3 {
+//     margin-left: 20px;
+//   }
+// }
+//
+// .mobile {}
+//
+// .social {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//
+//   .social-container {
+//     padding: 0;
+//     margin: 0;
+//     background-color: whitesmoke;
+//     padding: 10px;
+//     margin-bottom: 10px;
+//     border: 1px solid grey;
+//   }
+// }
+//
+// .social-image {
+//   // padding: 10px;
+//   // margin-bottom: 10px;
+//   margin-bottom: 10px;
+// padding: 10px;
+// border: solid #b2b2b2 1px;
+// color: #fff;
+// background-color: #fbfbfb;
+// border-radius: 5px;
+// }
+//
+// .members {
+//
+// }
+//
+// .recent-activity {
+//
+// }
+//
+// .message {
+//
+// }
+//
+// .settings {
+//
+// }
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile - Make the chart widgets responsive to screen resizing */
+// .widget-container-full, .widget-container-half {
+//   width: 95vw;
+// }

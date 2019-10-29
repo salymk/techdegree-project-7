@@ -1,92 +1,86 @@
-* {
-  font-family: 'Lato', sans-serif; }
+/* ============================================= */
+/*              variables                    */
+/* ============================================= */
+/* ============================================= */
+/*              Mixins                    */
+/* ============================================= */
+/* ============================================= */
+/*              Images                           */
+/* ============================================= */
+.profile-picture {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px; }
 
+/* ============================================= */
+/*              Media Queries                    */
+/* ============================================= */
+/* ============================================= */
+/*              Base styles                      */
+/* ============================================= */
+* {
+  font-family: 'Lato', sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+p {
+  line-height: 1.45em; }
+
+a {
+  text-decoration: none; }
+
+/* ============================================= */
+/*              Grid System                      */
+/* ============================================= */
 .grid-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+/* Make the chart widgets responsive to screen resizing on mobile*/
+.widget-container-full,
+.widget-container-half {
+  width: 95vw; }
+
+.main {
   display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 75px 1fr;
-  grid-template-columns: 75px 1fr;
-  grid-template-areas: "header header" "nav main" "nav main"; }
-  .grid-container .header {
-    -ms-grid-row: 1;
+  display: grid; }
+
+@media (min-width: 768px) {
+  .grid-container {
+    -ms-grid-columns: 75px 1fr;
+    grid-template-columns: 75px 1fr;
+    grid-template-areas: "header header" "navigation main"; }
+  .main {
+    -ms-grid-columns: 50%;
+    grid-template-columns: 50%; }
+  .traffic, .social {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
-    grid-area: header; }
-  .grid-container .navigation {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
+    grid-column: 1 / span 2; }
+  .daily, .members, .message {
     -ms-grid-column: 1;
-    grid-area: nav; }
-  .grid-container .main {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1; }
+  .mobile, .activity, .settings {
     -ms-grid-column: 2;
-    grid-area: main;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 10px 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    -ms-grid-rows: auto 10px auto 10px auto 10px auto 10px auto 10px auto 10px auto;
-    grid-template-areas: "main-header main-header" "alert alert" "traffic traffic" "daily mobile" "social social" "members recent-activity" "message settings";
-    /* Make the chart widgets responsive to screen resizing */ }
-    .grid-container .main .main-header {
-      -ms-grid-row: 1;
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 3;
-      grid-area: main-header; }
-    .grid-container .main .alert {
-      -ms-grid-row: 3;
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 3;
-      grid-area: alert; }
-    .grid-container .main .traffic {
-      -ms-grid-row: 5;
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 3;
-      grid-area: traffic; }
-    .grid-container .main .daily {
-      -ms-grid-row: 7;
-      -ms-grid-column: 1;
-      grid-area: daily; }
-    .grid-container .main .mobile {
-      -ms-grid-row: 7;
-      -ms-grid-column: 3;
-      background-color: #7476B5;
-      grid-area: mobile; }
-    .grid-container .main .social {
-      -ms-grid-row: 9;
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 3;
-      background-color: red;
-      grid-area: social; }
-    .grid-container .main .members {
-      -ms-grid-row: 11;
-      -ms-grid-column: 1;
-      background-color: purple;
-      grid-area: members; }
-    .grid-container .main .recent-activity {
-      -ms-grid-row: 11;
-      -ms-grid-column: 3;
-      background-color: coral;
-      grid-area: recent-activity; }
-    .grid-container .main .message {
-      -ms-grid-row: 13;
-      -ms-grid-column: 1;
-      background-color: grey;
-      grid-area: message; }
-    .grid-container .main .settings {
-      -ms-grid-row: 13;
-      -ms-grid-column: 3;
-      background-color: brown;
-      grid-area: settings; }
-    .grid-container .main .widget-container-full {
-      width: 90vw; }
-    .grid-container .main .widget-container-half {
-      width: 45vw; }
+    -ms-grid-column-span: 1;
+    grid-column: 2 / span 1; }
+  /* Make the chart widgets responsive to
+  screen resizing on tablet and desktop*/
+  .widget-container-full {
+    width: 90vw; }
+  .widget-container-half {
+    width: 45vw; } }
 
+/* ============================================= */
+/*              Header                   */
+/* ============================================= */
 .header {
-  background-color: #737ABF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,15 +91,17 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  height: auto;
-  color: #fff;
-  -webkit-box-shadow: 5px 5px 5px #aaaaaa;
-  box-shadow: 5px 5px 5px #aaaaaa; }
+  background-color: #737ABF;
+  height: 75px;
+  color: #fff; }
   .header #title {
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
     color: #fff;
-    font-size: 1.2em;
-    padding: .5em;
-    font-weight: bold; }
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 5px; }
     .header #title #app-word {
       font-weight: 100;
       font-size: 1.3em; }
@@ -128,27 +124,17 @@
       height: 30px;
       padding: .2em; }
     .header .bell .bell-icon {
-      margin: 5px;
-      -webkit-transition: color 1s;
-      -o-transition: color 1s;
-      transition: color 1s; }
-    .header .bell .bell-icon:hover {
-      color: red; }
-  .header .profile-picture {
-    border-radius: 50%;
-    width: 30px;
-    height: 30px; }
+      margin: 5px; }
   .header #profile-name {
     font-weight: 400;
     font-size: .8em;
     margin-right: 7px;
     margin-left: 10px; }
 
-.st0 {
-  fill: red; }
-
-.navigation {
-  background-color: #4C4C73;
+/* ============================================= */
+/*              Main                   */
+/* ============================================= */
+.main-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -156,39 +142,52 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
-  .navigation a {
-    margin: 10px; }
-
-.main-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #F5F5F5; }
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
   .main-header .headline {
-    background-color: white;
-    font-size: smaller;
-    padding: 5px; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    padding: 10px; }
+    .main-header .headline h2 {
+      color: #4C4C73;
+      margin: 0px;
+      font-size: 2em; }
   .main-header .search {
-    margin: 15px; }
-
-.search input {
-  width: 275px;
-  height: 35px;
-  border-radius: 5px;
-  border: 1px solid grey; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid #737ABF;
+    background-color: #737ABF; }
+    .main-header .search input {
+      width: 100%;
+      border: 1px solid #fff;
+      border-radius: 10px;
+      padding: 10px; }
 
 .alert {
   padding-top: .75em;
@@ -218,7 +217,78 @@
   margin-left: auto;
   font-size: 1.1em; }
 
-#Layer_1 {
-  fill: red; }
+.traffic, .daily, .mobile, .social,
+.members, .recent-activity, .message, .settings {
+  padding: 10px;
+  border-bottom: 1px solid #737ABF;
+  margin-top: 10px; }
+  .traffic h3, .daily h3, .mobile h3, .social h3,
+  .members h3, .recent-activity h3, .message h3, .settings h3 {
+    color: #4C4C73;
+    font-size: 1.3em; }
 
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.social-container {
+  background: aliceblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 10px;
+  border: 1px solid grey; }
+
+.social-image {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  height: 80px;
+  width: 80px; }
+
+svg {
+  background-color: #737ABF;
+  border-radius: 50%; }
+
+/* ============================================= */
+/*              Navigation                       */
+/* ============================================= */
+.navigation {
+  background-color: #4C4C73;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .navigation a {
+    margin: 10px; }
+
+/* ============================================= */
+/*              Buttons                          */
+/* ============================================= */
+button {
+  color: red; }
+
+/* ============================================= */
+/*              Forms                            */
+/* ============================================= */
 /* Mobile - Make the chart widgets responsive to screen resizing */

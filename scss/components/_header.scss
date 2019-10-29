@@ -1,0 +1,49 @@
+/* ============================================= */
+/*              Header                   */
+/* ============================================= */
+
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $headerColor;
+  height: 75px;
+  color: $white;
+
+  #title {
+     align-self: center;
+     color: $white;
+     font-size: 1em;
+     font-weight: bold;
+    margin-left: 5px;
+     #app-word {
+       font-weight: 100;
+       font-size: 1.3em;
+     }
+  }
+
+    .bell {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .vl {
+        border-left: 2px solid #2C8EC5;
+        height: 30px;
+        padding: .2em;
+      }
+
+      .bell-icon {
+        margin: 5px;
+      }
+    }
+
+   #profile-name {
+      font-weight: 400;
+      font-size: .8em;
+      margin-right: 7px;
+      margin-left: 10px;
+
+  }
+}

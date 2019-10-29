@@ -1,0 +1,15 @@
+/* ============================================= */
+/*              Navigation                       */
+/* ============================================= */
+
+.navigation {
+  background-color: $navigationColor;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    margin: 10px;
+  }
+}

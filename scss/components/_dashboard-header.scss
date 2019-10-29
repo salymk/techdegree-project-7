@@ -1,0 +1,39 @@
+.main-header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  .headline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    order: 2;
+    padding: 10px;
+
+    h2 {
+      color: $navigationColor;
+      margin: 0px;
+      font-size: 2em;
+    }
+  }
+
+  .search {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    order: 1;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid $headerColor;
+    background-color: $headerColor;
+
+    input {
+      width: 100%;
+      border: 1px solid $white;
+      border-radius: 10px;
+      padding: 10px;
+    }
+  }
+}

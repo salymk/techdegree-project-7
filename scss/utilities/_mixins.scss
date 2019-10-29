@@ -1,0 +1,19 @@
+/* ============================================= */
+/*              Mixins                    */
+/* ============================================= */
+
+//Circular images
+@mixin circleImg {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+ //Flexable header
+@mixin flexHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

@@ -1,0 +1,24 @@
+.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.social-container {
+  background: aliceblue;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.social-image {
+  align-self: center;
+  height: 80px;
+  width: 80px;
+}
+
+svg {
+  background-color: $headerColor;
+  border-radius: 50%;
+}
