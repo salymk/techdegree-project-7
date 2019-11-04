@@ -1,64 +1,55 @@
-// .members {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-// }
-//
-//
-// .members-container {
-//   // display: inline-flex;
-//   // flex-direction: row;
-//   // align-items: flex-start;
-//   // flex-wrap: wrap;
-//
-//   margin-bottom: 10px;
-//   border-bottom: 1px solid $headerColor;
-//   padding: 10px;
-// }
-//
-//
-//
-// .members-text {
-//   display: inline-block;
-//   margin-left: 10px;
-//   margin-right: 10px;
-//
-// }
-//
-// .members-text p:first-child {
-//   margin: 0px;
-// }
-//
-// .members-text p:last-child {
-//   margin: 0px;
-//   float: right;
-//   margin-top: 10px;
-// }
 
 .members-container {
   display: inline-flex;
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
-
-  border-bottom: 1px solid $headerColor;
   padding: 10px;
+  width: 100%;
+  font-size: .8em;
+
 
   .members-text {
     margin-left: 10px;
-    display: inline-flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
+    flex-grow: 1;
     p {
       margin: 0px;
     }
   }
+
+  p {
+    align-self: flex-end;
+  }
 }
+
+.members-container:nth-child(2n), .members-container:nth-child(3n) {
+  border-bottom: 1px solid $headerColor;
+}
+
 
 
 .profile-image {
   @include circleImg;
   width: 50px;
   height: 50px;
+}
+
+
+@media (min-width: 768px) {
+  .recent-activity {
+    border-left: 1px solid #737ABF;
+    padding: 0px;
+
+    h3 {
+      margin-left: 5px;
+    }
+  }
+
+  .members {
+    padding: 0px;
+
+    h3 {
+      margin-left: 5px;
+    }
+  }
 }

@@ -14,9 +14,9 @@
   #title {
      align-self: center;
      color: $white;
-     font-size: 1em;
+     font-size: 1.4em;
      font-weight: bold;
-    margin-left: 5px;
+     margin-left: 10px;
      #app-word {
        font-weight: 100;
        font-size: 1.3em;
@@ -28,6 +28,7 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      margin-right: 10px;
       .vl {
         border-left: 2px solid #2C8EC5;
         height: 30px;
@@ -36,6 +37,17 @@
 
       .bell-icon {
         margin: 5px;
+      }
+
+      svg {
+        fill: $white;
+        transition: transform 1s ease-out;
+      }
+
+      svg:hover #bell-container {
+        fill: lightgreen;
+        transform: rotate(45deg);
+        transform-origin: 50% 50%;
       }
     }
 
@@ -46,4 +58,32 @@
       margin-left: 10px;
 
   }
+}
+
+//Pulsing Notification Dot
+//A PEN BY Ethan MacDonald
+
+@import "bourbon";
+
+@include keyframes(heartbeat) {
+  0% {
+    @include transform(scale(1));
+  }
+  50% {
+    @include transform(scale(1.3));
+  }
+  100% {
+    @include transform(scale(1));
+  }
+}
+
+.circle {
+  background: lightgreen;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 17px;
+  @include transform(translate(-50%, -50%));
+  @include animation(heartbeat 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1s infinite);
 }

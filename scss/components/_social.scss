@@ -1,11 +1,11 @@
-.social {
+.social{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .social-container {
-  background: $white;
+  background: #F8F8F8;
   display: flex;
   justify-content: flex-start;
   padding: 15px;
@@ -44,4 +44,34 @@
   font-weight: lighter;
   color: grey;
   margin: 0px;
+}
+
+
+//_media-quries
+@media (min-width: 768px) {
+  .main-social-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+  }
+
+  .social-container {
+  }
+  .social-text p:last-child {
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-social-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .social-container {
+  }
+  .social-text p:last-child {
+    font-size: 2.5em;
+  }
 }

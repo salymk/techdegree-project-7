@@ -16,3 +16,9 @@
   a {
     text-decoration: none;
   }
+
+  textarea, select, input, button { outline: none; }
+
+  h3 {
+    text-transform: capitalize;
+  }

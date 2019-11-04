@@ -6,18 +6,24 @@
 
 @import "_alert.scss";
 
+//Charts
 .traffic, .daily, .mobile, .social,
 .members, .recent-activity, .message, .settings {
     padding: 10px;
     border-bottom: 1px solid $headerColor;
-    margin-top: 10px;
+    // margin-top: 10px;
 
     h3 {
       color: $navigationColor;
       font-size: 1.3em;
+      text-transform: capitalize;
     }
 }
 
 @import "_social";
 
 @import "_members.scss";
+
+@import "_message.scss";
+
+@import "_toggle-buttons.scss";

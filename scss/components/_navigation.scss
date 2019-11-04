@@ -13,3 +13,16 @@
     margin: 10px;
   }
 }
+
+@media (min-width: 768px) {
+  .navigation {
+    grid-area: navigation;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    img {
+      margin-top: 22px;
+    }
+  }
+}
