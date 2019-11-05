@@ -11,7 +11,12 @@
 /* Make the chart widgets responsive to screen resizing on mobile*/
 .widget-container-full,
 .widget-container-half {
-  width: 95vw;
+  width: 100%;
+}
+
+canvas {
+  height: unset !important;
+  width: 100% !important;
 }
 
 //Main content desktop layout

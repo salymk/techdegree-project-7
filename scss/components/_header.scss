@@ -41,6 +41,7 @@
 
       svg {
         fill: $white;
+        cursor: pointer;
         transition: transform 1s ease-out;
       }
 
@@ -49,6 +50,46 @@
         transform: rotate(45deg);
         transform-origin: 50% 50%;
       }
+
+      ul {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        background: #ccc;
+        transform-origin: top;
+        transition: .5s;
+        transform: perspective(1000px) rotateX(-90deg);
+        cursor: pointer;
+
+        h3 {
+          color: $navigationColor;
+          padding: 5px;
+          font-size: 1.2em;
+        }
+
+        li {
+          list-style: none;
+          display: block;
+          padding: 10px;
+          text-align: center;
+          background: $white;
+          color: $navigationColor;
+          border-bottom: 1px solid rgba(0,0,0, .2);
+          transition: background .3s;
+
+        }
+
+        li:hover {
+          background: $headerColor;
+          color: $white;
+        }
+      }
+
+      .dropdown:hover {
+        ul {
+          transform: perspective(1000px) rotateX(0deg);
+        }
+      }
     }
 
    #profile-name {
@@ -56,9 +97,11 @@
       font-size: .8em;
       margin-right: 7px;
       margin-left: 10px;
-
   }
+
 }
+
+
 
 //Pulsing Notification Dot
 //A PEN BY Ethan MacDonald

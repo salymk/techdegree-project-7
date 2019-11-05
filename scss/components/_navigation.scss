@@ -23,6 +23,12 @@
 
     img {
       margin-top: 22px;
+      transition: border-left .1s ease-out;
+    }
+
+    img:hover {
+      border-left: 3px solid lightgreen;
+      padding: 7px;
     }
   }
 }

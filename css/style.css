@@ -53,7 +53,11 @@ h3 {
 /* Make the chart widgets responsive to screen resizing on mobile*/
 .widget-container-full,
 .widget-container-half {
-  width: 95vw; }
+  width: 100%; }
+
+canvas {
+  height: unset !important;
+  width: 100% !important; }
 
 .main {
   display: -ms-grid;
@@ -204,6 +208,7 @@ h3 {
       margin: 5px; }
     .header .bell svg {
       fill: #fff;
+      cursor: pointer;
       -webkit-transition: -webkit-transform 1s ease-out;
       transition: -webkit-transform 1s ease-out;
       -o-transition: transform 1s ease-out;
@@ -217,6 +222,41 @@ h3 {
       -webkit-transform-origin: 50% 50%;
       -ms-transform-origin: 50% 50%;
       transform-origin: 50% 50%; }
+    .header .bell ul {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      background: #ccc;
+      -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+      transform-origin: top;
+      -webkit-transition: .5s;
+      -o-transition: .5s;
+      transition: .5s;
+      -webkit-transform: perspective(1000px) rotateX(-90deg);
+      transform: perspective(1000px) rotateX(-90deg);
+      cursor: pointer; }
+      .header .bell ul h3 {
+        color: #4C4C73;
+        padding: 5px;
+        font-size: 1.2em; }
+      .header .bell ul li {
+        list-style: none;
+        display: block;
+        padding: 10px;
+        text-align: center;
+        background: #fff;
+        color: #4C4C73;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        -webkit-transition: background .3s;
+        -o-transition: background .3s;
+        transition: background .3s; }
+      .header .bell ul li:hover {
+        background: #737ABF;
+        color: #fff; }
+    .header .bell .dropdown:hover ul {
+      -webkit-transform: perspective(1000px) rotateX(0deg);
+      transform: perspective(1000px) rotateX(0deg); }
   .header #profile-name {
     font-weight: 400;
     font-size: .8em;
@@ -310,7 +350,13 @@ h3 {
     -ms-flex-pack: start;
     justify-content: flex-start; }
     .navigation img {
-      margin-top: 22px; } }
+      margin-top: 22px;
+      -webkit-transition: border-left .1s ease-out;
+      -o-transition: border-left .1s ease-out;
+      transition: border-left .1s ease-out; }
+    .navigation img:hover {
+      border-left: 3px solid lightgreen;
+      padding: 7px; } }
 
 @media (min-width: 768px) {
   .header {
@@ -478,6 +524,11 @@ h3 {
     color: #4C4C73;
     font-size: 1.3em;
     text-transform: capitalize; }
+
+.switch-toggle {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content; }
 
 .social {
   display: -webkit-box;
