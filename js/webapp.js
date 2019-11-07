@@ -152,7 +152,7 @@ send.addEventListener('click', ()=> {
       window.alert('Please fill out user and message fields before sending');
     } else if (user.value === "") {
       window.alert('Please fill out user field before sending');
-    } else if (message.vaule = "") {
+    } else if (message.value === "") {
       window.alert('Please fill out message field before sending');
     } else {
       window.alert(`Message successfully sent to: ${user.value}`);
